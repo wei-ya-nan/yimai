@@ -50,7 +50,7 @@ public class ManageUserServlet extends BaseServlet {
         Integer id = WebUtils.parseInt(request.getParameter("id"), 0);
         userService.deleteUserById(id);
         response.sendRedirect(request.getHeader("Referer"));
-        System.out.println(request.getHeader("Referer"));
+
     }
 
     protected void updateUser(HttpServletRequest request, HttpServletResponse response) throws ServletException,

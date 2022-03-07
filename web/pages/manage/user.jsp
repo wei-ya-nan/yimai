@@ -58,7 +58,8 @@
                         </c:if>
                         <c:if test="${userpage.userName != 'admin'}">
                             <td class="w1 c"><a href="manage/user?action=updateUser&userId=${userpage.userId}">修改</a>
-                                <a class="delete_user" href="#" userId="${userpage.userId}">删除</a></td>
+                                <a class="delete_user" href="manage/user?action=deleteUser&id=${userpage.userId}"
+                                   userId="${userpage.userId}">删除</a></td>
                         </c:if>
 
                     </tr>
@@ -78,9 +79,7 @@
     $(function () {
         $("a.delete_user").click(function () {
             var userId = $(this).attr("userId");
-            if( confirm("请确认是否删除")){
-                location.href='manage/user?action=deleteUser&id='+userId;
-            }
+           return confirm("是否删除");
 
         })
     });

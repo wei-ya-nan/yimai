@@ -53,7 +53,7 @@
                 <p>库　存：有货</p>
                 <p>库　存：有货</p>
                 <p>库　存：有货</p>
-                <div class="button"><input type="button" name="button" value=""  onclick="goBuy(1)"/>
+                <div class="button"><input id="buy" type="button" name="button" value=""  onclick="goBuy(1)"/>
                     <a productOneId="${requestScope.productOne.id}" id="addToCart"
                        href="client/cart?action=addItem&productOneId=${requestScope.productOne.id}">放入购物车
                     </a>
@@ -75,6 +75,13 @@
     Copyright &copy; 2010 北大青鸟 All Rights Reserved. 京ICP证1000001号
 </div>
 <script type="text/javascript">
+    $(function () {
+        $("#buy").click(function () {
+            if(confirm("确认购买吗")){
+                location.href="manage/order?action=shopping";
+            }
+        })
+    })
     // $(function () {
     //     $("#addToCart").click(function () {
     //         var productOneId = $(this).attr("productOneId");
