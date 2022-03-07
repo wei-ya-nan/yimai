@@ -54,8 +54,13 @@
                         <td class="w2 c">${userpage.sex}</td>
                         <td>${userpage.email}</td>
                         <td class="w4 c">${userpage.mobile}</td>
-                        <td class="w1 c"><a href="manage/user?action=updateUser&userId=${userpage.userId}">修改</a>
-                            <a class="delete_user" href="#" userId="${userpage.userId}">删除</a></td>
+                        <c:if test="${userpage.userName == 'admin'}">
+                        </c:if>
+                        <c:if test="${userpage.userName != 'admin'}">
+                            <td class="w1 c"><a href="manage/user?action=updateUser&userId=${userpage.userId}">修改</a>
+                                <a class="delete_user" href="#" userId="${userpage.userId}">删除</a></td>
+                        </c:if>
+
                     </tr>
                 </c:forEach>
 
